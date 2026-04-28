@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The 830 Productions vault landing page. Search by file name to find the private page you were sent.">
+  <meta name="theme-color" content="#031F33">
+  <meta property="og:title" content="830 Productions Vault">
+  <meta property="og:description" content="Find your 830 Productions vault page by file name.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vault.830productions.com/">
+  <meta property="og:image" content="https://vault.830productions.com/Logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="830 Productions Vault">
+  <meta name="twitter:description" content="Search for your vault page by file name.">
+  <link rel="canonical" href="https://vault.830productions.com/">
+  <title>830 Productions Vault</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="preconnect" href="https://use.typekit.net">
+  <link rel="stylesheet" href="https://use.typekit.net/ney4fwq.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-loader" aria-hidden="true">
+    <div class="loader-mark">
+      <img src="Logo.png" alt="">
+      <p data-loader-quip>Unlocking the vault...</p>
+    </div>
+  </div>
+
+  <main class="page-shell">
+    <section class="hero reveal" aria-labelledby="vault-heading">
+      <div class="hero-media" aria-hidden="true">
+        <img src="Logo.png" alt="">
+        <span class="scan-line"></span>
+      </div>
+
+      <div class="hero-copy">
+        <p class="section-kicker">830 Productions Vault</p>
+        <h1 id="vault-heading">Check the exact link you were given.</h1>
+        <p class="hero-intro">This page is only the front door. Project rooms live at direct file links like <strong>vault.830productions.com/Example.html</strong>.</p>
+      </div>
+
+      <form class="vault-search" data-search-form role="search">
+        <label for="vault-search-input">Search vault pages</label>
+        <div class="search-row">
+          <span class="search-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <circle cx="10.8" cy="10.8" r="6.6"></circle>
+              <path d="m16 16 4.2 4.2"></path>
+            </svg>
+          </span>
+          <input id="vault-search-input" type="search" name="q" autocomplete="off" spellcheck="false" placeholder="Search a file name like Example..." data-search-input>
+          <button type="submit">Search</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="results-zone reveal" aria-labelledby="results-heading">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Find Your Page</p>
+          <h2 id="results-heading">Search results</h2>
+        </div>
+        <p>Search checks the vault HTML pages by file name. If you were sent Example.html, search Example.</p>
+      </div>
+
+      <div class="results-panel">
+        <div class="results-meta" data-results-meta>Start typing to search the vault index.</div>
+        <div class="results-list" data-results-list></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span data-year></span> 830 Productions. Private project pages stay behind the exact links.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
