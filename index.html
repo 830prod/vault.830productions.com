@@ -3,79 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The 830 Productions vault landing page. Search by file name to find the private page you were sent.">
+  <meta name="description" content="The 830 Productions vault. Search by file name to find the private project page you were sent.">
   <meta name="theme-color" content="#031F33">
   <meta property="og:title" content="830 Productions Vault">
-  <meta property="og:description" content="Find your 830 Productions vault page by file name.">
+  <meta property="og:description" content="Find your 830 Productions project page by file name.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vault.830productions.com/">
   <meta property="og:image" content="https://vault.830productions.com/Logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="830 Productions Vault">
-  <meta name="twitter:description" content="Search for your vault page by file name.">
+  <meta name="twitter:description" content="Find your 830 Productions project page by file name.">
   <link rel="canonical" href="https://vault.830productions.com/">
-  <title>830 Productions Vault</title>
-  <link rel="icon" type="image/png" href="Logo.png">
-  <link rel="preconnect" href="https://use.typekit.net">
+  <title>830 Productions | Vault</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="https://use.typekit.net/ney4fwq.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261102b">
+  <link rel="prefetch" href="vault-files.json">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="script.js?v=20261102b" defer></script>
 </head>
 <body>
-  <div class="site-loader" aria-hidden="true">
-    <div class="loader-mark">
-      <img src="Logo.png" alt="">
-      <p data-loader-quip>Unlocking the vault...</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="stripe-bar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="header-inner">
+      <a class="brand" href="https://830productions.com" aria-label="830 Productions home">
+        <img src="images/brand/lockup-white.svg" alt="830 Productions" width="128" height="75">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="https://830productions.com">Studio <span class="ext" aria-hidden="true">&#8599;</span></a>
+        <a href="https://830productions.com/contact.html">Contact <span class="ext" aria-hidden="true">&#8599;</span></a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <main class="page-shell">
-    <section class="hero reveal" aria-labelledby="vault-heading">
-      <div class="hero-media" aria-hidden="true">
-        <img src="Logo.png" alt="">
-        <span class="scan-line"></span>
+  <main id="main">
+    <section class="page-hero" aria-labelledby="vault-heading">
+      <div class="wrap">
+        <span class="label">Client Vault</span>
+        <h1 class="display" id="vault-heading">Your project, one link away.</h1>
+        <p class="lede">Every project page lives at its own link, like <strong>vault.830productions.com/Example.html</strong>. Search the file name you were sent.</p>
+
+        <form class="vault-search" data-search-form role="search">
+          <label class="field-label" for="vault-search-input">File name</label>
+          <div class="search-row">
+            <div class="search-field">
+              <input id="vault-search-input" type="search" name="q" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Example" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="vault-suggestions" data-search-input autofocus>
+              <ul class="suggestions" id="vault-suggestions" role="listbox" aria-label="Suggested pages" data-suggestions hidden></ul>
+            </div>
+            <button class="btn btn-primary" type="submit">Find page</button>
+          </div>
+          <p class="search-hint">Pick a suggestion, or press Enter to open the top match.</p>
+        </form>
       </div>
-
-      <div class="hero-copy">
-        <p class="section-kicker">830 Productions Vault</p>
-        <h1 id="vault-heading">Check the exact link you were given.</h1>
-        <p class="hero-intro">This page is only the front door. Project rooms live at direct file links like <strong>vault.830productions.com/Example.html</strong>.</p>
-      </div>
-
-      <form class="vault-search" data-search-form role="search">
-        <label for="vault-search-input">Search vault pages</label>
-        <div class="search-row">
-          <span class="search-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-              <circle cx="10.8" cy="10.8" r="6.6"></circle>
-              <path d="m16 16 4.2 4.2"></path>
-            </svg>
-          </span>
-          <input id="vault-search-input" type="search" name="q" autocomplete="off" spellcheck="false" placeholder="Search a file name like Example..." data-search-input>
-          <button type="submit">Search</button>
-        </div>
-      </form>
     </section>
 
-    <section class="results-zone reveal" aria-labelledby="results-heading">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Find Your Page</p>
-          <h2 id="results-heading">Search results</h2>
+    <section class="section section--ice" aria-labelledby="results-heading">
+      <div class="wrap">
+        <div class="results-head">
+          <div>
+            <span class="label">Results</span>
+            <h2 class="heading" id="results-heading">Find your page.</h2>
+          </div>
+          <p class="results-meta" data-results-meta aria-live="polite">Start typing to search the vault.</p>
         </div>
-        <p>Search checks the vault HTML pages by file name. If you were sent Example.html, search Example.</p>
-      </div>
 
-      <div class="results-panel">
-        <div class="results-meta" data-results-meta>Start typing to search the vault index.</div>
-        <div class="results-list" data-results-list></div>
+        <div class="results-list" data-results-list>
+          <div class="empty-state">Enter a file name to search the vault.</div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span data-year></span> 830 Productions. Private project pages stay behind the exact links.</p>
-  </footer>
+    <img class="footer-watermark" src="images/brand/reel-harbor.svg" alt="" aria-hidden="true">
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/brand/lockup-white.svg" alt="830 Productions" width="150" height="88">
+          <p>Stories on film, told with care.</p>
+        </div>
 
-  <script src="script.js"></script>
+        <nav class="footer-nav" aria-label="Footer">
+          <div>
+            <span class="label">Studio</span>
+            <ul>
+              <li><a href="https://830productions.com">Home</a></li>
+              <li><a href="https://830productions.com/services.html">Services</a></li>
+              <li><a href="https://830productions.com/book.html">Book</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="label">Contact</span>
+            <ul>
+              <li><a href="mailto:830productions@gmail.com">830productions@gmail.com</a></li>
+              <li><a href="https://www.instagram.com/830_productions" target="_blank" rel="noreferrer">Instagram <span class="ext" aria-hidden="true">&#8599;</span></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-base">
+        <p>© <span data-year></span> 830 Productions</p>
+        <p>Private pages stay behind their links.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
